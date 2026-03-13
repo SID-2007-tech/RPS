@@ -25,26 +25,39 @@ function playRound(humanChoice, computerChoice) {
     humanScore++;
     return ("You won! " + humanChoice + " beats " + computerChoice);
   }
-  if (computerChoice == "ROCK" && humanChoice == "SCISSORS"){
+  else if (computerChoice == "ROCK" && humanChoice == "SCISSORS"){
     computerScore++;
     return("You lose! " + computerChoice + " beats " + humanChoice);
   }
-  if (humanChoice == "ROCK" && computerChoice == "PAPER"){
+  else if (humanChoice == "ROCK" && computerChoice == "PAPER"){
     humanScore++;
     return("You won! " + humanChoice + " beats " + computerChoice);
   }
-  if (computerChoice == "ROCK" && humanChoice == "PAPER"){
+  else if (computerChoice == "ROCK" && humanChoice == "PAPER"){
     computerScore++;
     return("You lose! " + computerChoice + " beats " + humanChoice);
   }
-  if (humanChoice == "SCISSORS" && computerChoice == "PAPER"){
+  else if (humanChoice == "SCISSORS" && computerChoice == "PAPER"){
     humanScore++;
     return("You won! " + humanChoice + " beats " + computerChoice);
   }
-  if (computerChoice == "SCISSORS" && humanChoice == "PAPER"){
+  else if (computerChoice == "SCISSORS" && humanChoice == "PAPER"){
     computerScore++;
     return("You lose! " + computerChoice + " beats " + humanChoice);
+  }
+  else{
+    return ("This round is a draw!");
   }
  
 }
+function playGame(){
+    for(let i = 1;i<=5;i++){
+        console.log("Round "+i);
+        console.log(playRound(getHumanChoice(),getComputerChoice()));
 
+    }
+    if(humanScore>computerScore) console.log("You are the Winner!! Congratulations!");
+    else if(humanScore==computerScore) console.log("The game is a draw");
+    else console.log("You lost!! Better luck next time!!");
+    
+}
